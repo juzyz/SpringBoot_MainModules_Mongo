@@ -1,5 +1,15 @@
 # SpringBoot_Demo
 
+### Introduction
+
+**Spring Boot** is an open-source Java-based framework designed to simplify the process of building, deploying, and running production-ready applications based on the Spring framework. Spring Boot provides a convention-over-configuration approach, allowing developers to create stand-alone, production-grade Spring-based Applications with minimal effort.
+
+**Spring MVC** (Model-View-Controller) is a framework within the broader Spring framework that facilitates the development of web applications based on the Model-View-Controller architectural pattern. It provides a structured way to build scalable and maintainable web applications in Java.
+
+**Spring Data JPA** is part of the larger Spring Data project, aiming to simplify data access in Spring-based applications, particularly in the context of Java Persistence API (JPA). JPA is a standard specification for object-relational mapping (ORM) in Java, providing a programming interface for managing relational data in Java applications.
+
+**PostgreSQL** is a powerful open-source relational database management system. It is known for its advanced features, extensibility, and compliance with SQL standards. PostgreSQL is widely used for various types of applications, ranging from small projects to large enterprise-level systems.
+
 
 ### Used frameworks 
 
