@@ -3,10 +3,11 @@
 
 ### Used frameworks 
 
-Java: 17
-Spring Boot 3.2.0
+1. Java: **17**
+2. Spring Boot: **3.2.0**
 
-## Prerequisites
+
+### Prerequisites
 
 Ensure you have the following installed:
 - Maven
@@ -20,6 +21,7 @@ Ensure you have the following installed:
 git clone https://github.com/geekidea/spring-boot-plus.git
 
 ```
+
 2. Navigate to the project directory:
 
 ```
