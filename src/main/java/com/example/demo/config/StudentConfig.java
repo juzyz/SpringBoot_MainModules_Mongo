@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.config;
 
 import com.example.demo.models.Student;
 import com.example.demo.repositories.StudentRepository;
