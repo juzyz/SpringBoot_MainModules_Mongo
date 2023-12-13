@@ -38,8 +38,7 @@ Ensure you have the following installed:
 1. Clone the repository:
 
 ```
-git clone https://github.com/geekidea/spring-boot-plus.git
-
+ git clone https://github.com/juzyz/SpringBoot_Demo.git
 ```
 
 2. Navigate to the project directory:
