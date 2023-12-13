@@ -6,7 +6,13 @@
 
 **Spring MVC** (Model-View-Controller) is a framework within the broader Spring framework that facilitates the development of web applications based on the Model-View-Controller architectural pattern. It provides a structured way to build scalable and maintainable web applications in Java.
 
+![SpringMvcSchema](https://github.com/juzyz/SpringBoot_Demo/assets/96008515/1abcd1fa-9d76-4da9-86a4-33ebf4948f09)
+
+
 **Spring Security** is a versatile module that simplifies authentication and authorization for Java applications. Key features include support for various authentication mechanisms, fine-grained access control, token-based security (such as JWT), secure password storage, and seamless integration with Spring Boot. 
+
+![SpringSecuritySchema](https://github.com/juzyz/SpringBoot_Demo/assets/96008515/abe679a7-9f08-4659-be6c-cc8c4a31ccdc)
+
 
 **Spring Data JPA** is part of the larger Spring Data project, aiming to simplify data access in Spring-based applications, particularly in the context of Java Persistence API (JPA). JPA is a standard specification for object-relational mapping (ORM) in Java, providing a programming interface for managing relational data in Java applications.
 
