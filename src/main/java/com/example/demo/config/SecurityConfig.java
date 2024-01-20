@@ -33,8 +33,9 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/api/v1/auth/authenticate").permitAll()
+                        .requestMatchers("/v3/**", "/swagger-ui/**").permitAll()
 //                        .requestMatchers("/**/auth/**").permitAll()
-                        .anyRequest().authenticated()
+                                .anyRequest().authenticated()
                 )
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -43,7 +44,6 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
-
 
 
     @Bean
