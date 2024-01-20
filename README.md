@@ -1,4 +1,4 @@
-# SpringBoot_Demo
+# SpringBoot_MainModules_Mongo
 
 ### Introduction
 
@@ -16,6 +16,11 @@
 
 **Spring Data JPA** is part of the larger Spring Data project, aiming to simplify data access in Spring-based applications, particularly in the context of Java Persistence API (JPA). JPA is a standard specification for object-relational mapping (ORM) in Java, providing a programming interface for managing relational data in Java applications.
 
+**Spring OpenApi Docs** helps to document RESTful services, providing explanations of the input, output, and endpoint URL for each API to enhance effective usage. In this project, the springdoc-openapi java library is used to automate API generation and integration with Swagger. Default Swagger link is http://localhost:8080/swagger-ui/index.html.
+
+<img src="https://github.com/juzyz/SpringBoot_MainModules_Mongo/assets/96008515/093e17be-0c5e-4732-bef8-e16774a87051" width="700" height="300">
+
+
 **PostgreSQL** is a powerful open-source relational database management system. It is known for its advanced features, extensibility, and compliance with SQL standards. PostgreSQL is widely used for various types of applications, ranging from small projects to large enterprise-level systems.
 
 
@@ -31,20 +36,20 @@
 
 Ensure you have the following installed:
 - Maven
-- PostgreSQL
+- MongoDB
 
 ### Quick Start 
 
 1. Clone the repository:
 
 ```
- git clone https://github.com/juzyz/SpringBoot_Demo.git
+ git clone https://github.com/juzyz/SpringBoot_MainModules_Mongo.git
 ```
 
 2. Navigate to the project directory:
 
 ```
-cd SpringBoot_Demo
+cd SpringBoot_MainModules_Mongo
 ```
 
 3. Build the project using Maven:
@@ -55,12 +60,10 @@ mvn clean install
 
 ### Configuration
 
-Configure the PostgreSQL database connection in src/main/resources/application.properties:
+Configure the Mongo database connection in src/main/resources/application.properties:
 
 ```
-spring.datasource.url=jdbc:postgresql://localhost:5432/yourdatabase
-spring.datasource.username=yourusername
-spring.datasource.password=yourpassword
+to be done
 ```
 
 ### Endpoints
