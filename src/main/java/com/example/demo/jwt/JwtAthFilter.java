@@ -34,11 +34,11 @@ public class JwtAthFilter extends OncePerRequestFilter {
         final String userEmail;
         final String jwtToken;
 
-        if (authHeader == null || !authHeader.startsWith("Bearer")) {
+        if (authHeader == null || !(authHeader.startsWith("Bearer") || authHeader.startsWith("Beaer") )) {
             filterChain.doFilter(request, response);
             return;
         }
-        jwtToken = authHeader.substring(7); //cut out 'Bearer'
+        jwtToken = authHeader.substring(authHeader.indexOf(" ")+1); //cut out 'Bearer'
         userEmail = jwtUtils.extractUsername(jwtToken);
         if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDoa.findUserByEmail(userEmail);
