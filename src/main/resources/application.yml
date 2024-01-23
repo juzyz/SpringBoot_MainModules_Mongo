@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: studentManager
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+server:
+  error:
+    include-message: always
