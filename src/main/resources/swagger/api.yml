@@ -1,0 +1,122 @@
+# This is an **example** API to demonstrate features of OpenAPI specification.
+# It doesn't cover all OpenAPI features. For more full example check out: https://github.com/APIs-guru/petstore_extended
+openapi: '3.0.1'
+
+info:
+  title: OpenAPI for Spring Boot Demo project
+  version: 1.0
+
+
+paths:
+  api/v1/student:
+    get:
+      summary: Get all students
+      operationId: getStudents
+      responses:
+        '200':
+          description: 'Details about all students'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/Student'
+        '403':
+          $ref: '#/components/responses/403'
+    post:
+      summary: Create new student
+      operationId: createStudent
+      requestBody:
+        $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '403':
+          $ref: '#/components/responses/403'
+  api/v1/student/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+    put:
+      summary: Update student by id
+      operationId: updateStudent
+      requestBody:
+        $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '403':
+          $ref: '#/components/responses/403'
+    delete:
+      summary: Delete student by id
+      operationId: deleteStudent
+      responses:
+        '200':
+          $ref: '#/components/responses/200'
+        '403':
+          $ref: '#/components/responses/403'
+
+  /api/v1/auth/authenticate:
+    post:
+      summary: Get JWT Token
+      operationId: auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDTO'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden/Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+
+components:
+  schemas:
+    UserDTO:
+      type: object
+      description: Data element for user
+      properties:
+        email:
+          type: string
+          example: admin.mail@gmail.com
+        password:
+          type: string
+          example: 123
+    Student:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Alex Spencer
+        email:
+          type: string
+          example: alex.spenser@gmail.com
+        dateOfBirth:
+          type: string
+          example: 2003-11-25
+  responses:
+    '200':
+      description: OK
+      content:
+        text/plain:
+          schema:
+            type: string
+    '403':
+      description: Unauthorized
+      content:
+        text/plain:
+          schema:
+            type: string
