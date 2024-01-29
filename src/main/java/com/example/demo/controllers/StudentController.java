@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @RestController
@@ -52,14 +53,14 @@ public class StudentController {
     @Operation(summary = "Delete the student by id",
             description = "Remove the student from DB")
     @DeleteMapping(path = "{studentId}")
-    public void deleteStudent(@PathVariable("studentId") Long studentId) {
+    public void deleteStudent(@PathVariable("studentId") Integer studentId) {
         studentService.deleteStudent(studentId);
     }
 
     @Operation(summary = "Update the student by id",
             description = "Update the student in DB")
     @PutMapping(path = "{studentId}")
-    public void updateStudent(@PathVariable("studentId") Long studentId,
+    public void updateStudent(@PathVariable("studentId") Integer studentId,
                               @RequestParam(required = false) String name,  // sent parameter via URL Parameters
                               @RequestParam(required = false) String email,
                               @RequestBody Student student  // or parse parameters from json of request body
