@@ -1,9 +1,13 @@
 package com.example.demo.models;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -11,33 +15,26 @@ import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
-@Entity
-@Table
+
+@Document(collection = "student")
 public class Student {
+
+    @Transient
+    public static final String SEQUENCE_NAME = "student_sequence";
+
     @Id
-    @SequenceGenerator(
-            name = "student_sequence",
-            sequenceName = "student_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            generator = "student_sequence",
-            strategy = GenerationType.SEQUENCE)
-    private Long id;
+//    @Indexed(unique=true) // for String UUID
+    private Integer id;
     @NotBlank
-    @Column(nullable = false)
     private String name;
     @Email
-    @Column(nullable = false, unique = true)
     private String email;
     private LocalDate dateOfBirth;
-    @Transient
-    private Integer age;
 
     public Student() {
     }
 
-    public Student(Long id, String name, String email, LocalDate dateOfBirth) {
+    public Student( Integer  id, String name, String email, LocalDate dateOfBirth) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -56,7 +53,6 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
-                ", age=" + age +
                 '}';
     }
 }
