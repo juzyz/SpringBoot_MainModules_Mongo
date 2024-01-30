@@ -60,7 +60,7 @@ mvn clean install
 
 ### Configuration
 
-Configure the Mongo database connection in src/main/resources/application.properties:
+Configure the Mongo database connection in src/main/resources/application.yml:
 
 ```
 spring:
