@@ -60,10 +60,15 @@ mvn clean install
 
 ### Configuration
 
-Configure the Mongo database connection in src/main/resources/application.properties:
+Configure the Mongo database connection in src/main/resources/application.yml:
 
 ```
-to be done
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: studentManager
 ```
 
 ### Endpoints
